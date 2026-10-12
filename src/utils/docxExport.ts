@@ -144,7 +144,7 @@ export async function exportToDocx(
       new TableRow({
         height: {
           value: rowHeightDxa,
-          rule: HeightRule.ATLEAST,
+          rule: HeightRule.EXACT,
         },
         children: cells,
       })
