@@ -30,9 +30,13 @@ export async function exportToDocx(
   config: LayoutConfig,
   fileName = 'Danh_sach_QR_Trang_A4.docx'
 ): Promise<void> {
-  const marginDxa = Math.round(config.marginMm * MM_TO_DXA);
-  const printableWidthDxa = A4_WIDTH_DXA - marginDxa * 2;
-  const printableHeightDxa = A4_HEIGHT_DXA - marginDxa * 2;
+  const marginTopDxa = Math.round(config.marginTopMm * MM_TO_DXA);
+  const marginBottomDxa = Math.round(config.marginBottomMm * MM_TO_DXA);
+  const marginLeftDxa = Math.round(config.marginLeftMm * MM_TO_DXA);
+  const marginRightDxa = Math.round(config.marginRightMm * MM_TO_DXA);
+
+  const printableWidthDxa = A4_WIDTH_DXA - marginLeftDxa - marginRightDxa;
+  const printableHeightDxa = A4_HEIGHT_DXA - marginTopDxa - marginBottomDxa;
 
   const cols = Math.max(1, config.columns);
   const rows = Math.max(1, config.rows);
@@ -166,10 +170,10 @@ export async function exportToDocx(
               height: A4_HEIGHT_DXA,
             },
             margin: {
-              top: marginDxa,
-              bottom: marginDxa,
-              left: marginDxa,
-              right: marginDxa,
+              top: marginTopDxa,
+              bottom: marginBottomDxa,
+              left: marginLeftDxa,
+              right: marginRightDxa,
             },
           },
         },

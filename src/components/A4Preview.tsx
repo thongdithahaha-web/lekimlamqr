@@ -22,8 +22,8 @@ export const A4Preview: React.FC<A4PreviewProps> = ({
   const totalSlots = cols * rows;
 
   // Printable area calculations
-  const printableWidthMm = 210 - config.marginMm * 2;
-  const printableHeightMm = 297 - config.marginMm * 2;
+  const printableWidthMm = 210 - config.marginLeftMm - config.marginRightMm;
+  const printableHeightMm = 297 - config.marginTopMm - config.marginBottomMm;
   const colWidthMm = (printableWidthMm - config.gapMm * (cols - 1)) / cols;
   const rowHeightMm = (printableHeightMm - config.gapMm * (rows - 1)) / rows;
   const qrBoxMm = Math.min(colWidthMm, rowHeightMm);
@@ -92,7 +92,10 @@ export const A4Preview: React.FC<A4PreviewProps> = ({
               height: '297mm',
               minWidth: '210mm',
               minHeight: '297mm',
-              padding: `${config.marginMm}mm`,
+              paddingTop: `${config.marginTopMm}mm`,
+              paddingBottom: `${config.marginBottomMm}mm`,
+              paddingLeft: `${config.marginLeftMm}mm`,
+              paddingRight: `${config.marginRightMm}mm`,
               boxSizing: 'border-box',
               display: 'flex',
               flexDirection: 'column',

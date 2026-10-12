@@ -427,20 +427,76 @@ export const Controls: React.FC<ControlsProps> = ({
             </p>
           </div>
 
-          <div>
-            <div className="flex justify-between text-xs mb-1">
-              <span className="text-slate-300 font-medium">Lề trang A4 (Margin)</span>
-              <span className="font-mono text-indigo-400 font-semibold">{config.marginMm} mm</span>
+          {/* Individual Page Margins (Top, Bottom, Left, Right like Word Page Setup) */}
+          <div className="pt-2 border-t border-slate-700/60 space-y-3">
+            <span className="text-xs font-semibold text-slate-200 block">
+              Canh Lề Trang A4 (Page Margins - Giống Word)
+            </span>
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <div className="flex justify-between text-[11px] mb-1">
+                  <span className="text-slate-400">Trên (Top)</span>
+                  <span className="font-mono text-indigo-400 font-semibold">{config.marginTopMm} mm</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="40"
+                  step="1"
+                  value={config.marginTopMm}
+                  onChange={(e) => onUpdateConfig({ marginTopMm: parseInt(e.target.value) || 0 })}
+                  className="w-full accent-indigo-500 cursor-pointer"
+                />
+              </div>
+
+              <div>
+                <div className="flex justify-between text-[11px] mb-1">
+                  <span className="text-slate-400">Dưới (Bottom)</span>
+                  <span className="font-mono text-indigo-400 font-semibold">{config.marginBottomMm} mm</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="40"
+                  step="1"
+                  value={config.marginBottomMm}
+                  onChange={(e) => onUpdateConfig({ marginBottomMm: parseInt(e.target.value) || 0 })}
+                  className="w-full accent-indigo-500 cursor-pointer"
+                />
+              </div>
+
+              <div>
+                <div className="flex justify-between text-[11px] mb-1">
+                  <span className="text-slate-400">Trái (Left)</span>
+                  <span className="font-mono text-indigo-400 font-semibold">{config.marginLeftMm} mm</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="40"
+                  step="1"
+                  value={config.marginLeftMm}
+                  onChange={(e) => onUpdateConfig({ marginLeftMm: parseInt(e.target.value) || 0 })}
+                  className="w-full accent-indigo-500 cursor-pointer"
+                />
+              </div>
+
+              <div>
+                <div className="flex justify-between text-[11px] mb-1">
+                  <span className="text-slate-400">Phải (Right)</span>
+                  <span className="font-mono text-indigo-400 font-semibold">{config.marginRightMm} mm</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="40"
+                  step="1"
+                  value={config.marginRightMm}
+                  onChange={(e) => onUpdateConfig({ marginRightMm: parseInt(e.target.value) || 0 })}
+                  className="w-full accent-indigo-500 cursor-pointer"
+                />
+              </div>
             </div>
-            <input
-              type="range"
-              min="5"
-              max="25"
-              step="1"
-              value={config.marginMm}
-              onChange={(e) => onUpdateConfig({ marginMm: parseInt(e.target.value) })}
-              className="w-full accent-indigo-500 cursor-pointer"
-            />
           </div>
         </div>
       </div>

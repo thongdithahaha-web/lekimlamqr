@@ -24,13 +24,16 @@ export async function exportA4ToPNG(
   ctx.fillStyle = '#FFFFFF';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const marginPx = Math.round(config.marginMm * MM_TO_PX_300DPI);
+  const marginTopPx = Math.round(config.marginTopMm * MM_TO_PX_300DPI);
+  const marginBottomPx = Math.round(config.marginBottomMm * MM_TO_PX_300DPI);
+  const marginLeftPx = Math.round(config.marginLeftMm * MM_TO_PX_300DPI);
+  const marginRightPx = Math.round(config.marginRightMm * MM_TO_PX_300DPI);
   const gapPx = Math.round(config.gapMm * MM_TO_PX_300DPI);
 
   const cols = config.columns;
   const rows = config.rows;
-  const printableWidth = canvas.width - marginPx * 2;
-  const printableHeight = canvas.height - marginPx * 2;
+  const printableWidth = canvas.width - marginLeftPx - marginRightPx;
+  const printableHeight = canvas.height - marginTopPx - marginBottomPx;
 
   const cellWidth = (printableWidth - gapPx * (cols - 1)) / cols;
   const cellHeight = (printableHeight - gapPx * (rows - 1)) / rows;
@@ -59,8 +62,8 @@ export async function exportA4ToPNG(
       const img = renderedImages.get(item.id);
       if (!img) continue;
 
-      const cellX = marginPx + c * (cellWidth + gapPx);
-      const cellY = marginPx + r * (cellHeight + gapPx);
+      const cellX = marginLeftPx + c * (cellWidth + gapPx);
+      const cellY = marginTopPx + r * (cellHeight + gapPx);
 
       // Draw cut lines / borders around cell if enabled
       if (config.showCutLines) {

@@ -40,7 +40,10 @@ export default function App() {
   const [config, setConfig] = useState<LayoutConfig>({
     columns: 3,
     rows: 4,
-    marginMm: 12,
+    marginTopMm: 12,
+    marginBottomMm: 12,
+    marginLeftMm: 12,
+    marginRightMm: 12,
     gapMm: 8,
     showCutLines: true,
     cutLineStyle: 'dashed',

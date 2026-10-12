@@ -12,7 +12,10 @@ export type CutLineStyle = 'none' | 'dashed' | 'dotted' | 'corners' | 'solid';
 export interface LayoutConfig {
   columns: number;
   rows: number;
-  marginMm: number; // outer page margin in mm (default 10mm)
+  marginTopMm: number;
+  marginBottomMm: number;
+  marginLeftMm: number;
+  marginRightMm: number;
   gapMm: number; // space between QR items (default 8mm)
   showCutLines: boolean;
   cutLineStyle: CutLineStyle;
