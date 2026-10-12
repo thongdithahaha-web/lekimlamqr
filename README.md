@@ -1,11 +1,9 @@
-<div align="center">
+# toolqr
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+© 2026 **Lê Kim Lâm**. All Rights Reserved.
 
-  <h1>Built with AI Studio</h2>
+**toolqr** là ứng dụng web chuyên dụng được thiết kế và phát triển độc quyền bởi **Lê Kim Lâm**, giúp sắp xếp, tạo và xuất file Word Doc (`.docx`), in PDF mã QR chuẩn trang A4 không xếp chồng, khoảng cách đều đẹp và tối ưu in ấn.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
-
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+## Giấy phép (License)
+Toàn bộ mã nguồn và thiết kế của dự án này thuộc quyền sở hữu trí tuệ hợp pháp của **Lê Kim Lâm**. 
+Mọi hành vi sao chép, phân phối hoặc sử dụng thương mại phải tuân thủ theo các điều khoản bản quyền đã được xác lập.

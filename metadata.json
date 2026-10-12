@@ -1,0 +1,6 @@
+{
+  "name": "toolqr - Lê Kim Lâm",
+  "description": "toolqr - Công cụ sắp xếp, tạo và xuất file Word Doc (.docx), in PDF mã QR chuẩn trang A4 không xếp chồng, khoảng cách đều đẹp bởi Lê Kim Lâm.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
